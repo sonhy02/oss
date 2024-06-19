@@ -12,7 +12,7 @@ num_movies = ratings['MovieID'].max()
 ratings_array = np.zeros((num_users, num_movies))
 ratings_array[ratings['UserID'] - 1, ratings['MovieID'] - 1] = ratings['Rating']
 
-pipe = make_pipeline(StandardScaler(), KMeans(n_clusters=3, n_init=10, random_state=0))
+pipe = make_pipeline(StandardScaler(), KMeans(n_clusters=3, n_init=10, random_state=69))
 pipe.fit(ratings_array)
 cluster_labels = pipe['kmeans'].labels_
 unique, counts = np.unique(cluster_labels, return_counts=True)
